@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let rock = "Rock";
+        let paper = "Paper";
+        let scissors = "Scissors";
+
+        function getComputerChoice() {
+            let a = Math.floor(Math.random() * 10) + 1;
+            let b = Math.floor(Math.random() * 10) + 1;
+            let c = Math.floor(Math.random() * 10) + 1;
+            if(a>b && a>c){
+                return rock;
+            }else if(b>a && b>c){
+                return paper;
+            }else if(c>a && c>b){
+                return scissors;
+            }else {
+                return getComputerChoice();
+            }
+        }
+
+        console.log(getComputerChoice());
+    </script>
+</body>
+
+</html>
