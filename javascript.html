@@ -5,112 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Odin RPS</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <script>
+    <div ID="infoContaner">
+        <h1 ID="title">R-P-S</h1>
+    </div>
 
-        function getComputerChoice() {
-            let rock = "rock";
-            let paper = "paper";
-            let scissors = "scissors";
-            let a = Math.floor(Math.random() * 10) + 1;
-            let b = Math.floor(Math.random() * 10) + 1;
-            let c = Math.floor(Math.random() * 10) + 1;
-            if (a > b && a > c) {
-                return rock;
-            } else if (b > a && b > c) {
-                return paper;
-            } else if (c > a && c > b) {
-                return scissors;
-            } else {
-                return getComputerChoice();
-            }
-        }
+    <div ID="buttonContainer">
+        <button class="button" ID="rockButton">Rock</button>
+        <button class="button" ID="paperButton">Paper</button>
+        <button class="button" ID="scissorsButton">Scissors</button>
+    </div>
 
-        function playRound() {
-
-            while (true) {
-                computerSelection = getComputerChoice();
-                playerSelection = prompt("Pick your weapon!");
-                playerSelection = playerSelection.toLowerCase();
-                if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
-                    break;
-                } else {
-                    console.log("That is not a weapon!");
-                }
-            }
-
-            if (playerSelection == "rock" && computerSelection == "scissors") {
-                console.log("You won! Rock breaks scissors!");
-                return true;
-            } else if (playerSelection == "rock" && computerSelection == "paper") {
-                console.log("You lost! Paper wraps rock!");
-                return false;
-            } else if (playerSelection == "paper" && computerSelection == "scissors") {
-                console.log("You lost! Scissor cuts paper!");
-                return false;
-            } else if (playerSelection == "paper" && computerSelection == "rock") {
-                console.log("You won! Paper wraps rock!");
-                return true;
-            } else if (playerSelection == "scissors" && computerSelection == "rock") {
-                console.log("You lost! Rock breaks scissors!");
-                return false;
-            } else if (playerSelection == "scissors" && computerSelection == "paper") {
-                console.log("You won! Scissor cuts paper!");
-                return true;
-            } else {
-                console.log(`${playerSelection} vs ${computerSelection} is a draw. Let\'s play again!`);
-                return 2;
-            }
-
-        }
-
-        function game() {
-            let numberOfRounds;
-            let winner;
-            let copmuterScore = 0;
-            let playerScore = 0;
-
-            while(true){
-                numberOfRounds = Number(prompt("How many rounds would you like to play? Please pick an odd number."));
-                if(numberOfRounds <= 0) {
-                    return console.log("OK! Loser!");
-                } else if(numberOfRounds % 2 == 0){
-                    console.log("You have to pick an odd number!");
-                } else if (numberOfRounds > 9) {
-                    console.log("I dont have that much time! Pick a reasonable one!");
-                } else {
-                    break;
-                }
-            }
-
-            for (let i = 0; i < numberOfRounds; i++) {
-                winner = playRound();
-                if (winner == 1) {
-                    playerScore++;
-                } else if (winner == 0) {
-                    copmuterScore++;
-                } else {
-                    i--;
-                }
-
-                if (playerScore > (numberOfRounds / 2) || copmuterScore > (numberOfRounds / 2)) {
-                    break;
-                }
-            }
-
-            if (playerScore > copmuterScore) {
-                return console.log("Congratulations! You won the game!");
-            } else {
-                return console.log("Haha! You lost!");
-            }
-        }
-
-        console.log(game());
-
-    </script>
+    <div ID="restartContainer">
+        <button class="button" ID="restartButton">Restart</button>
+    </div>
+    
+    <script src="js.js"></script>
 </body>
 
 </html>

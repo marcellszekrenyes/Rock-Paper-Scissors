@@ -1,0 +1,57 @@
+#buttonContainer {
+    display: flex;
+    margin: auto;
+    padding: 50px;
+    width: 1000px;
+    height: 80px;
+}
+
+#restartContainer {
+    display: flex;
+    margin: auto;
+    padding: 50px;
+    width: 1000px;
+    height: 800px;
+}
+
+#title {
+    text-align: center;
+    color:rgb(3, 3, 3);
+    padding-top: 150px;
+    margin-bottom: 250px;
+}
+
+.button {
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: rgb(123, 123, 224);
+    border-color: aliceblue;
+    color: aliceblue;
+}
+
+.button:hover {
+    transition: 0.7s;
+    background-color: aquamarine;
+    color: rgb(123, 123, 224);
+    border-color: rgb(123, 123, 224);
+}
+
+#restartButton {
+    background-color: rgb(197, 111, 111);
+    border-color: aliceblue;
+    color: aliceblue;
+    align-items: start;
+}
+
+#restartButton:hover {
+    transition: 0.7s;
+    background-color: rgb(224, 215, 81);
+    color: rgb(197, 111, 111);
+    border-color: rgb(197, 111, 111);
+}
